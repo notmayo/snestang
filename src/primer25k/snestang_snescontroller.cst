@@ -7,49 +7,51 @@ IO_PORT "s0" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=OFF BANK_VCCIO=3.3;
 //IO_LOC "reset2" H10;
 //IO_PORT "reset2" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=OFF BANK_VCCIO=3.3;
 
-// HDMI (USB-A side PMOD)
-IO_LOC "tmds_clk_p" H5;
+// HDMI (USB-C side PMOD)
+// Flipping from USB-A side to USB-C side for easier case layout
+IO_LOC "tmds_clk_p" C11;
 IO_PORT "tmds_clk_p" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
-IO_LOC "tmds_clk_n" J5;
+IO_LOC "tmds_clk_n" C10;
 IO_PORT "tmds_clk_n" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
-IO_LOC "tmds_d_p[0]" H8;
+IO_LOC "tmds_d_p[0]" B11;
 IO_PORT "tmds_d_p[0]" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
-IO_LOC "tmds_d_n[0]" H7;
+IO_LOC "tmds_d_n[0]" B10;
 IO_PORT "tmds_d_n[0]" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
-IO_LOC "tmds_d_p[1]" G7;
+IO_LOC "tmds_d_p[1]" D11;
 IO_PORT "tmds_d_p[1]" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
-IO_LOC "tmds_d_n[1]" G8;
+IO_LOC "tmds_d_n[1]" D10;
 IO_PORT "tmds_d_n[1]" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
-IO_LOC "tmds_d_p[2]" F5;
+IO_LOC "tmds_d_p[2]" G11;
 IO_PORT "tmds_d_p[2]" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
-IO_LOC "tmds_d_n[2]" G5;
+IO_LOC "tmds_d_n[2]" G10;
 IO_PORT "tmds_d_n[2]" PULL_MODE=NONE IO_TYPE=LVCMOS33D;
 
-// SDCard
-IO_LOC "sd_clk" C11;
+// SDCard (USB-A side PMOD)
+// Moving to USB-A from USB-C side for easier case layout
+IO_LOC "sd_clk" H5;
 IO_PORT "sd_clk" PULL_MODE=NONE IO_TYPE=LVCMOS33; 
-IO_LOC "sd_cmd" D11;        // MOSI
+IO_LOC "sd_cmd" G7;        // MOSI
 IO_PORT "sd_cmd" PULL_MODE=NONE IO_TYPE=LVCMOS33;
-IO_LOC "sd_dat0" B11;       // MISO or SD card DO, needs pull-up
+IO_LOC "sd_dat0" H8;       // MISO or SD card DO, needs pull-up
 IO_PORT "sd_dat0" PULL_MODE=UP IO_TYPE=LVCMOS33;
-IO_LOC "sd_dat1" G10;       // 1
+IO_LOC "sd_dat1" G5;       // 1
 IO_PORT "sd_dat1" PULL_MODE=NONE IO_TYPE=LVCMOS33;
-IO_LOC "sd_dat2" D10;       // 1
+IO_LOC "sd_dat2" G8;       // 1
 IO_PORT "sd_dat2" PULL_MODE=NONE IO_TYPE=LVCMOS33;
-IO_LOC "sd_dat3" G11;       // 1
+IO_LOC "sd_dat3" F5;       // 1
 IO_PORT "sd_dat3" PULL_MODE=NONE IO_TYPE=LVCMOS33;
 // old MUSELab SDCARD 1.0
-// IO_LOC "sd_clk" D10;
+// IO_LOC "sd_clk" G8;
 // IO_PORT "sd_clk" PULL_MODE=NONE IO_TYPE=LVCMOS33; 
-// IO_LOC "sd_cmd" D11;        // MOSI
+// IO_LOC "sd_cmd" G7;        // MOSI
 // IO_PORT "sd_cmd" PULL_MODE=NONE IO_TYPE=LVCMOS33;
-// IO_LOC "sd_dat0" B11;       // MISO or SD card DO, needs pull-up
+// IO_LOC "sd_dat0" H8;       // MISO or SD card DO, needs pull-up
 // IO_PORT "sd_dat0" PULL_MODE=UP IO_TYPE=LVCMOS33;
-// IO_LOC "sd_dat1" B10;       // 1
+// IO_LOC "sd_dat1" H7;       // 1
 // IO_PORT "sd_dat1" PULL_MODE=NONE IO_TYPE=LVCMOS33;
-// IO_LOC "sd_dat2" G11;       // 1
+// IO_LOC "sd_dat2" F5;       // 1
 // IO_PORT "sd_dat2" PULL_MODE=NONE IO_TYPE=LVCMOS33;
-// IO_LOC "sd_dat3" G10;       // 1
+// IO_LOC "sd_dat3" G5;       // 1
 // IO_PORT "sd_dat3" PULL_MODE=NONE IO_TYPE=LVCMOS33;
 
 // UART through USB-C port
